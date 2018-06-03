@@ -25,11 +25,12 @@ Citra dipartisi per blok dengan ukuran blok adalah 8x8 pixel. Berikut adalah con
 ![Gambar1](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/JPEG_Example_1.jpg)
 Gambar 1. Citra sebelum dipartisi
 
-
+![Gambar2](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/JPEG_Example_2.jpg)
 Gambar 2. Citra sesudah dipartisi
 
 Kemudian dimisalkan akan diproses partisi dari baris ke-10, kolom ke-3. Yaitu :
 
+![Gambar3](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/JPEG_Example_3.jpg)
 Gambar 3. Partisi citra dari baris ke-10, kolom ke-3.
 
 Dengan matriks (setiap nilai telah dikurangi 128 agar nilai setiap bilangan menjadi signed integer :
@@ -46,16 +47,21 @@ Dengan matriks (setiap nilai telah dikurangi 128 agar nilai setiap bilangan menj
 #### Pemprosesan DCT (Discrete Cosine Transformasi)
 Setiap nilai pada matriks di atas kemudian ditransformasi menjadi bentuk gelombang cosinus yang nilainya berada di antara -1 dan 1. Transformasi ini bertujuan menghilangkan frekuensi tinggi yang tidak dapat begitu dilihat oleh mata manusia. Berikut adalah rumus dan hasil yang diperoleh setelah transformasi DCT :
 
+![Rumus](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/Rumus%20DCT.jpg)
+![HasilTransformasi](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/Hasil%20Transformasi%20DCT.png)
 
 #### Co-Efficient Quantization
 Pada langkah ini, setiap nilai yang mendekati 0 akan diubah menjadi 0, dan sisanya mengecil mendekati 0. Kuantisasi ini dilakukan dengan mengalkulasi matriks dari hasil langkah sebelumnya dengan rumus dan matriks kuantisasi ini :
 
+![Rumus](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/Rumus%20Quantization.jpg)
+![Kuantisasi](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/Luminance%20Table.jpg)
 Maka hasil yang diperoleh adalah :
-
+![HasilMatrix](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/Hasil%20Kuantisasi%20Luminance.png)
 
 #### Lossless Encoding
 Hasil dari kuantisasi di atas kemudian dipetakan menjadi larik 1 dimensi dengan metode zigzag dan metode kompresi Huffman.
 
+![MetodeZigzag](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/JPEG%20Zigzag%20Last%20Step%20Compression.png)
 Gambar 4. Metode kompresi zigzag
 
 Langkah terakhir ini bertujuan mengelompokkan nilai dengan frekuensi bukan 0 di awal dan frekuensi bukan 0 di akhir. Maka hasil penerapan langkah ini menghasilkan :
@@ -103,10 +109,12 @@ Lossless compression adalah sebuah teknik untuk mengurangi data yang disimpan de
 ### Run-Length Encoding (RLE)
 Teknik Run-Length Encoding merupakan salah satu teknik paling sederhana untuk kompresi secara lossless. Hampir seluruh file bitmap dapat dikompresi menggunakan teknik RLE. Teknik RLE tidak mempedulikan informasi dari data yang ingin dikompresi, namun isi dari data tersebut memengaruhi seberapa efisien teknik RLE dapat bekerja. Contoh sederhana dari kompresi secara RLE adalah sebagai berikut :
 
-    Sebelum kompresi
+Sebelum kompresi
+
     AAAAAABBBBB
 
-    Setelah kompresi
+Setelah kompresi
+
     6A5B
     
 Pada contoh di atas, jumlah karakter setelah dikompresi menjadi berkurang, dari awalnya 11 karakter menjadi 4 karakter. Kompresi RLE menyimpan jumlah karakter yang ada secara kontigu, dan karakter yang ada tersebut. Data yang ingin dikompresi sangat berpengaruh terhadap seberapa efisien RLE dapat mengkompresinya.
@@ -115,7 +123,8 @@ Keunggulan dari kompresi RLE adalah kompresi model ini sederhana dan mudah untuk
 
 Terdapat beberapa variasi untuk kompresi secara RLE. Umumnya, untuk mengompresi sebuah gambar, dilakukan dengan menganggap data gambar tersebut sebagai sebuah data sekuensial yang mengalir secara satu dimensi. Untuk pemrosesan secara sekuensial, dapat dilakukan dari ujung kiri atas ke kanan, dilakukan terus hingga ke ujung kanan bawah (gambar 1 bagian a), ataupun dari ujung kiri atas ke bawah hingga ke ujung kanan bawah (gambar 1 bagian b). Terdapat juga variasi RLE secara non-sekuensial, yaitu dengan membagi-bagi setiap bagian menjadi kotak-kotak kecil (gambar 1 bagian c) dan zig-zag (gambar 1 bagian d). Kompresi RLE dapat divariasikan dengan berbagai macam bentuk lainnya, namun jarang dilakukan variasi lain tersebut.
 
-Gambar 1. Variasi Teknik Run-Length Encoding (RLE)
+![RLEVariation](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/RLE_Encoding_Technique.jpg)
+Gambar 5. Variasi Teknik Run-Length Encoding (RLE)
 
 ### Portable Network Graphics (PNG)
 PNG adalah sebuah teknik kompresi dari file gambar yang masih disimpan secara dot matriks secara lossless. Kompresi pada file PNG dibagi menjadi dua tahap, yaitu filtering (prediksi), dan kompresi (deflate). Tahap filtering pada file PNG yaitu mentransformasi data yang awalnya adalah nilai dari setiap piksel menjadi perbedaan nilai dengan piksel yang berada di dekatnya. Untuk setiap garis-pengecekan, sebuah piksel dipetakan dengan relasi terhadap atas, kiri, dan diagonal kiri atas.
@@ -124,8 +133,8 @@ PNG memiliki lima buah teknik untuk filtering, yaitu tidak difilter, perbedaan d
 
 Algoritma deflate merupakan kombinasi algoritma LZ277 dengan pengkodean Huffman. Algoritma ini mengecek kecocokan panjang antara 3 hingga 258 simbol, sehingga dapat membuat rasio maksimum kompresi data adalah 1032:1. Jika kecocokan kurang dari 3 simbol, dibutuhkan informasi tambahan untuk merepresentasikan piksel. Kompresi secara PNG sangat bergantung terhadap kecocokan pola pada gambar. Jika kecocokan ternyata tinggi, maka file PNG dapat dikompresi secara efisien. 
 
-
-Gambar 2. Perbandingan JPG dan PNG
+![JPGvsPNG](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/JPG_and_PNG_Compression.jpg)
+Gambar 6. Perbandingan JPG dan PNG
 
 ### MPEG-4 Audio Lossless Coding (MPEG-4 ALS)
 MPEG-4 ALS merupakan sebuah pengembangan dari MPEG-4 yang dapat mengompresi secara lossless. Teknik kompresi ini difinalisasi pada Desember 2005. MPEG-4 ALS mengompresi data berdasarkan prediksi linear secara adaptif-maju, yang dapat mengompresi secara cepat. Proses ini dilakukan Fitur tambahan seperti prediksi jangka panjang, kode multichannel, dan kompresi bilangan real juga dapat diterapkan pada MPEG-4 ALS. MPEG-4 ALS dapat mengompresi secara efisien dalam hal rasio kompresi dan juga kecepatannya.
@@ -137,9 +146,11 @@ Predictor : Mengkalkulasi prediksi residu dari sinyal yang asli dan koefisien ku
 Entropy Coding : Mengkodekan resudi menggunakan Golomb-Rice ataupun algoritma entropi lainnya
 Multiplexer : Mengombinasikan residu hasil entropy coding, indeks kode, koefisien prediksi, dan kode CRC
 
-Gambar 3. Proses Encode MPEG-4 ALS
+![MPEG4EncodeALS](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/MPEG-4_Encode_ALS_Process.jpg)
+Gambar 7. Proses Encode MPEG-4 ALS
 
-Gambar 4. Perbandingan Performa Proses Kompresi Audio
+![AudioCompressionComparison](/13516021_13516047_Data%20Compression_Lossy%20and%20Lossless%20Compression/images/Audio_Compressoin_Comparison.jpg)
+Gambar 8. Perbandingan Performa Proses Kompresi Audio
 
 
 ## Daftar Pustaka
