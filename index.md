@@ -1,10 +1,11 @@
-# Data Compression - Lossy and Lossless Compression
+# Pendahuluan
 
 Data compression, atau bit-rate reduction adalah metode encoding suatu informasi agar jumlah bit yang dipakai lebih sedikit dari representasi aslinya. Data compression dilakukan untuk mengefektifkan penggunaan storage space. Seluruh bit data yang dapat diperkecil akan dikompres semaksimal mungkin agar diperoleh file yang sedekat mungkin dengan file aslinya tetapi dengan ukuran sekecil mungkin.
 
 Teknik pengecilan ukuran file yang paling umum dilakukan adalah menghapus dan mengganti data elemen yang repetitif. Data compression dapat dilakukan secara lossless (tidak ada data yang hilang) dan juga lossy (data yang tidak begitu signifikan dihapus). Berikut adalah penjelasan lebih lanjut mengenai lossy compression dan lossless compression.
 
 ## Lossy Compression
+----------
 Lossy compression adalah sebuah teknik kompresi data dengan menghilangkan sebagian informasi yang hasil akhirnya masih dapat diterima. Lossy compression umumnya dipraktikkan pada gambar, suara, dan video. Metode ini memanfaatkan keterbatasan indera manusia (mata, telinga) dalam melihat dan membaca detil suatu gambar, suara, atau video. Indera manusia secara umum tidak dapat membedakan secara eksak file sesudah dan sebelum dilakukannya lossy compression selama metode tersebut tidak dilakukan secara berlebihan. Perbedaan dan pengurangan kualitas dapat terlihat ketika file yang dikompres dilihat lebih detil dengan komputer.
 
 Lossy compression menghilangkan sebagian informasi dari suatu file, oleh karena itu ukuran file yang diperoleh dapat lebih kecil hingga 80% (misalnya untuk gambar dengan format JPEG). Metode kompresi ini memberikan pilihan kepada pengguna untuk memiliki file dengan kualitas yang tinggi tetapi ukurannya besar, atau kualitasnya berkurang (yang umumnya tidak begitu dapat dibedakan indera manusia) tetapi hemat tempat karena ukurannya lebih kecil. Berikut adalah beberapa metode lossy compression :
@@ -90,7 +91,9 @@ Kompresi ini memiliki 3 lapisan. Lapisan yang umum dipakai adalah lapisan ketiga
 #### Compliance Testing dan Software Simulation
 Dua metode terakhir ini bertujuan untuk mengevaluasi dan menguji hasil kompresi yang telah dikalkulasi agar tetap terbentuk hasil kompresi yang acceptable.
 
+
 ## Lossless Compression
+----------
 Lossless compression adalah sebuah teknik untuk mengurangi data yang disimpan dengan tidak ada informasi yang hilang. Data hasil kompresi harus dapat direkonstruksi ulang menjadi sama seperti data awal. Lossless compression digunakan pada berbagai macam tipe file, seperti untuk kompresi data audio, gambar, maupun video, maupun file general lainnya. Secara umum, proses dalam lossless compression dibagi menjadi dua, yaitu menghasilkan model statistik untuk memperkecil ukuran file, kemudian menggunakan model statistik tersebut untuk memetakan data masukan menjadi bentuk yang telah dikompresi. Tidak ada satu teknik yang dapat mengompresi seluruh tipe data secara efisien. Oleh karena itu, setiap teknik kompresi dibuat untuk sebuah tipe data yang spesifik. Berikut beberapa contoh teknik kompresi data:
     
 ### Run-Length Encoding (RLE)
