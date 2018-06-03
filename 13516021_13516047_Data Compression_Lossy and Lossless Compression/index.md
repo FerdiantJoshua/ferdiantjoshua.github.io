@@ -22,6 +22,7 @@ Y adalah brightness dari suatu citra, Cb adalah nilai perbedaan warna biru relat
 #### Preproses DCT
 Citra dipartisi per blok dengan ukuran blok adalah 8x8 pixel. Berikut adalah contoh pempartisian gambar berukuran 240x320 pixel.
 
+![Gambar1](/images/JPEG_Example_1.jpg)
 Gambar 1. Citra sebelum dipartisi
 
 
