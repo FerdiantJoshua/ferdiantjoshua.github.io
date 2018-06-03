@@ -8,6 +8,7 @@ Teknik pengecilan ukuran file yang paling umum dilakukan adalah menghapus dan me
 Lossy compression adalah sebuah teknik kompresi data dengan menghilangkan sebagian informasi yang hasil akhirnya masih dapat diterima. Lossy compression umumnya dipraktikkan pada gambar, suara, dan video. Metode ini memanfaatkan keterbatasan indera manusia (mata, telinga) dalam melihat dan membaca detil suatu gambar, suara, atau video. Indera manusia secara umum tidak dapat membedakan secara eksak file sesudah dan sebelum dilakukannya lossy compression selama metode tersebut tidak dilakukan secara berlebihan. Perbedaan dan pengurangan kualitas dapat terlihat ketika file yang dikompres dilihat lebih detil dengan komputer.
 
 Lossy compression menghilangkan sebagian informasi dari suatu file, oleh karena itu ukuran file yang diperoleh dapat lebih kecil hingga 80% (misalnya untuk gambar dengan format JPEG). Metode kompresi ini memberikan pilihan kepada pengguna untuk memiliki file dengan kualitas yang tinggi tetapi ukurannya besar, atau kualitasnya berkurang (yang umumnya tidak begitu dapat dibedakan indera manusia) tetapi hemat tempat karena ukurannya lebih kecil. Berikut adalah beberapa metode lossy compression :
+
 ### JPEG
 JPEG (Joint Photography Expert Group) adalah sebuah metode kompresi yang menjadi standard pada tahun 1992. Metode ini secara garis besar terbagi menjadi 5 tahap, yaitu :
 
@@ -26,15 +27,16 @@ Kemudian dimisalkan akan diproses partisi dari baris ke-10, kolom ke-3. Yaitu :
 
 Gambar 3. Partisi citra dari baris ke-10, kolom ke-3.
 
-Dengan matriks (setiap nilai telah dikurangi 128 agar nilai setiap bilangan menjadi signed integer ::
-–122 0049 0066 0041 0041 0043 0040 0038 
-–121 0049 0031 0045 0035 0050 0041 0024
-–122 0040 0045 0105 0031 –066 0018 0087 
-–094 0052 0042 0047 –122 –122 0008 0051 
-–119 –023 0053 0051 0045 0070 0061 0042 
-–064 –122 –025 –026 0033 0015 0006 0012 
-–076 –080 –064 –122 0053 0064 0038 –122
-–078 –074 –084 –122 0057 0043 0041 –053
+Dengan matriks (setiap nilai telah dikurangi 128 agar nilai setiap bilangan menjadi signed integer :
+
+    –122 0049 0066 0041 0041 0043 0040 0038
+    –121 0049 0031 0045 0035 0050 0041 0024
+    –122 0040 0045 0105 0031 –066 0018 0087 
+    –094 0052 0042 0047 –122 –122 0008 0051 
+    –119 –023 0053 0051 0045 0070 0061 0042 
+    –064 –122 –025 –026 0033 0015 0006 0012 
+    –076 –080 –064 –122 0053 0064 0038 –122
+    –078 –074 –084 –122 0057 0043 0041 –053
 
 #### Pemprosesan DCT (Discrete Cosine Transformasi)
 Setiap nilai pada matriks di atas kemudian ditransformasi menjadi bentuk gelombang cosinus yang nilainya berada di antara -1 dan 1. Transformasi ini bertujuan menghilangkan frekuensi tinggi yang tidak dapat begitu dilihat oleh mata manusia. Berikut adalah rumus dan hasil yang diperoleh setelah transformasi DCT :
@@ -52,7 +54,9 @@ Hasil dari kuantisasi di atas kemudian dipetakan menjadi larik 1 dimensi dengan 
 Gambar 4. Metode kompresi zigzag
 
 Langkah terakhir ini bertujuan mengelompokkan nilai dengan frekuensi bukan 0 di awal dan frekuensi bukan 0 di akhir. Maka hasil penerapan langkah ini menghasilkan :
--2, -19, 14, -2, 4, -15, -6, -2, -2, 2 1 -3, -2, -13, -4 -1, 0, 7, -3, 0, -3, 0, 2, 1, 2, -1, 0, -1, 0, -1, -1, 0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, -2, 1, 1, 0, 0, -1, -1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.
+
+    -2, -19, 14, -2, 4, -15, -6, -2, -2, 2 1 -3, -2, -13, -4 -1, 0, 7, -3, 0, -3, 0, 2, 1, 2, -1, 0, -1, 0, -1, -1, 0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, -2, 1, 1, 0, 0, -1, -1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
 Hasil rentetan bilangan dalam larik 1 dimensi tersebut kemudian dikompres dengan metode huffman. Dan dapat diperoleh hasil kompresi hingga 70% lebih kecil dari ukuran aslinya.
 
 
@@ -92,11 +96,11 @@ Lossless compression adalah sebuah teknik untuk mengurangi data yang disimpan de
 ### Run-Length Encoding (RLE)
 Teknik Run-Length Encoding merupakan salah satu teknik paling sederhana untuk kompresi secara lossless. Hampir seluruh file bitmap dapat dikompresi menggunakan teknik RLE. Teknik RLE tidak mempedulikan informasi dari data yang ingin dikompresi, namun isi dari data tersebut memengaruhi seberapa efisien teknik RLE dapat bekerja. Contoh sederhana dari kompresi secara RLE adalah sebagai berikut :
 
-  Sebelum kompresi
-  AAAAAABBBBB
+    Sebelum kompresi
+    AAAAAABBBBB
 
-  Setelah kompresi
-  6A5B
+    Setelah kompresi
+    6A5B
     
 Pada contoh di atas, jumlah karakter setelah dikompresi menjadi berkurang, dari awalnya 11 karakter menjadi 4 karakter. Kompresi RLE menyimpan jumlah karakter yang ada secara kontigu, dan karakter yang ada tersebut. Data yang ingin dikompresi sangat berpengaruh terhadap seberapa efisien RLE dapat mengkompresinya.
 
