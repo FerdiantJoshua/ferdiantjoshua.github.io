@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="container">
+	<header>
+		<h1 id="name">Ferdiant Joshua Muis</h1>
+		
+		<div id="designation">
+		
+			<span class="title">Software Engineer</span>
+			<span class="organization">The organisation name</span>
+		
+		</div>
+		
+		<div class="contact">
+			<div class="email">ferdiant@example.com</div>
+		</div>
+		
+	</header>
+	
+	<div class="content" role=main>
+	
+		<section id="summary">
+			<h2 class="title">Summary</h2>
+			<div class="description">
+				<p>
+					I am a 4-year-experienced NLP-antusiast Software Engineer who is specialized in back-end engineering. I enthusiastically learn, and
+explore many new things as a part of my curiosity. I enjoy spending my off-work time doing side projects, which helps me to catch up
+with new technologies, as well as to improve my software engineering excellence.
+				</p>			
+			</div> <!-- end description -->
+		</section>
+		
+		
+		<section id="Education">
+			<h2 class="title">Education</h2>
+			<div class="description">
+				
+				<table>
+					<thead>
+						<td>Duration</td>
+						<td>Qualification</td>
+						<td>Institute/School</td>
+						<td>Result</td>
+					</thead>
+					
+					<!-- edit this/ row-wise-->
+					<tr>
+						<td>4 years</td>
+						<td>Computer Science</td>
+						<td>Bandung Institute of Technology</td>
+						<td>Bachelor in Computer Science</td>
+					</tr>
+					
+					<tr> <!-- row2 -->
+						<td>3 years</td>
+						<td>Natural Science</td>
+						<td>SMAK 1 BPK PENABUR Bandung</td>
+						<td>-</td>
+					</tr>					
+					
+				</table>
+			
+			
+			</div> <!-- end description -->
+		</section>
+			
+		<section id="experiences">
+			<h2 class="title">Working Experience</h2>
+			<div class="description">
+				
+				<!-- Project 1 -->
+				<section class="project">
+					<h3 class="title">Sembly, Singapore</h3>
+					<div class="meta">
+						<span class="field">Backend Engineer (Search Team)</span> <span class="date">May 2021 - Present</span>
+					</div>
+					<p class="description"> Sembly is a multi-national company which is building a collective braintrust social media. Sembly aims to be the leading
+                        platform for providing the most accurate and trustworthy information, which is achieved by facilitating the most
+                        well-reviewed collaborative discourse. </p>
+                    <ul>
+                        <li> Belong to the search team, to implement all 10+ search-related features in the backend service, which integrates Algolia &
+                            ElasticSearch as the core internal search engines. </li>
+                        <li> Develop both classical & semantic-based search, which utilizes lots of search technologies such as: BM25, optimized roaring
+                        bitmap, sentence encoding, semantic vector matching, as well as modern LLMs like GPT4, and Mixtral8x7B. </li>
+                        <li> Maintain & design performance vs cost trade-off of the search index, picking the right trade-off for various corresponding use
+                        cases, which services are deployed as microservice, preparing for usage by 100+ million concurrent users. </li>
+                        <li> Lead the GlobalSearch & LocalSearch project, which creates the mostly-used search as an entrypoint search in Sembly. The
+                        searches integrate most of ElasticSearch features, retaining a low internal latency (<100 ms) for a whole database search. </li>
+                        <li> Accelerate sentence-encoding and document indexing process by around 50%, and significantly reduce maintenance and
+                        future development cost. </li>
+                        <li> Mainly use Golang, ReactJS, Algolia, and ElasticSearch. </li>
+                    </ul>
+				</section> <!-- end project description -->
+				
+				<!-- project 2 -->
+				<section class="project">
+					<h3 class="title">Prosa.ai, Bandung</h3>
+					<div class="meta">
+						<span class="field">NLP Text / Backend Engineer</span> <span class="date">Feb 2020 - May 2021</span>
+					</div>
+					<p class="description">Prosa.ai is an Indonesian AI-based company, which sells AI-as-a-service. Prosa.ai is a both research & profit company, which
+                        always tries to innovate and contribute in latest research, as well as practising the research in client’s real-world use cases.</p>
+                    <ul>
+                        <li>Mainly developed colloquial word normalization model, including serving it as an API, developed using library OpenNMT.</li>
+                        <li>Maintained 10+ existing Prosa.ai's NLP toolkit, including deploying them: from off-premise services by utilizing Gitlab CI/CD,
+                        to on-premise services by designing various automated scripts, Daemon service, Docker, and Makefile.</li>
+                        <li>Mostly used Python, using various deep learning libraries like Tensorflow and PyTorch.</li>
+                    </ul>
+				</section> <!-- end project description -->
+
+
+				<!-- project 3 -->
+				<section class="project">
+					<h3 class="title">Garasi.id</h3>
+					<div class="meta">
+						<span class="field">Backend Engineer Internship</span> <span class="date">May 2019 - Aug 2019</span>
+					</div>
+					<p class="description">Garasi.id is a car service providing platform, which also used to sell 2nd or 3rd-hand cars. Garasi.id already has partnerships
+                        in more than 30 cities across Indonesia.</p>
+                    <ul>
+                        <li> Developed car listing moderation service which utilizes ML-based car image recognition, and was deployed as a performant
+                            microservice. </li>
+                        <li> Experimented with lots of Git features, which involves heavy Git history rewriting. </li>
+                        <li> Mainly used Python, and AmazonAWS. </li>
+                    </ul>
+				</section> <!-- end project description -->				
+				
+				</div> <!-- end description -->
+		</section>
+        
+		<!-- Training/ seminars -->
+		<section id="projects">
+			<h2 class="title">Side Projects</h2>
+			<div class="description">
+				
+				<!-- Project 1 -->
+				<section class="project">
+					<h3 class="title">Private Music School ERP <small><a href="https://sonamusica-frontend.pages.dev/">(Demo link)</a></small></h3>
+					<div class="meta">
+						<span class="field">Client: A local private music school in Bandung</span> <span class="date">Okt 2023 - Present</span>
+					</div>
+                    <ul>
+                        <li>A simple ERP (Enterprise Resource Planner) to manage daily administration tasks of a private music school.</li>
+                        <li>Technology used: Golang (backend), Next.js (frontend).</li>
+                    </ul>
+				</section> <!-- end project description -->
+				
+				<!-- project 2 -->
+				<section class="project">
+					<h3 class="title">Church Liturgy Presentation Automation Framework <small><a href="https://github.com/FerdiantJoshua/LiturgiToEwsFormatConverter">(Github link)</a></small></h3>
+					<div class="meta">
+						<span class="field">Client: A local church in Bandung</span> <span class="date">Sep 2020 - Jun 2022</span>
+					</div>
+                    <ul>
+                        <li>An automatic liturgy (PDF) extractor, to be converted into OpenLP-friendly format. The converted result will later be edited in
+                            a Word-like editor to adjust the final layout. The result can be used directly in OpenLP stages to display custom layout for
+                            weekly Sunday Services.</li>
+                        <li>Technology used: JavaScript, CSS, Python, HTML5, open source software OpenLP.</li>
+                    </ul>
+				</section> <!-- end project description -->
+
+
+				<!-- project 3 -->
+				<section class="project">
+					<h3 class="title">Student-to-Supervisor Thesis Assigner <small><a href="https://github.com/FerdiantJoshua/student-to-supervisor-thesis-assigner">(Github link)</a></small></h3>
+					<div class="meta">
+						<span class="field">Client: A local private university in Bandung</span> <span class="date">Sep 2020 - Jun 2022</span>
+					</div>
+                    <ul>
+                        <li>A Google App Script program to help the assignment process of thesis students to their supervisors using Google
+                            Spreadsheet and Google Form.</li>
+                        <li>Technology used: Google Apps Script (Sheet, Form)</li>
+                    </ul>
+				</section> <!-- end project description -->		
+				
+				</div> <!-- end description -->
+		</section>		
+		
+		<!-- Scholistics Achievements -->
+		
+		
+		
+		<!-- Technical Skills -->
+		
+		
+		<!-- Extra-Curricular Activities -->
+		
+		
+		<!-- Personal Informations -->
+		
+		
+		<!-- References -->
+		
+		
+		
+		<!-- Declarations -->
+
+	
+		<!-- signatory -->
+
+        
+	
+	</div> <!-- end main content -->
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</div> <!-- end container -->
+	
+</body>
+</html>
