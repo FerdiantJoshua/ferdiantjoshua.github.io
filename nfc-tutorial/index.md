@@ -71,6 +71,16 @@ pcsc_scan
 
 ### Use mfcuk and mfoc
 
+Simply install the packages from Linux repositories:
+
+```sh
+sudo apt-get install mfoc mfcuk
+```
+
+OR
+
+You can install them manually from sources:
+
 #### mfcuk
 
 Download all `.mfd` files inside [mfcuk_fix/data/tmpls_fingerprints/](https://github.com/S0c5/mfcuk_fix/tree/master/data/tmpls_fingerprints), then put under "./mfcuk/src/data/tmplsfingerprints/"
@@ -86,6 +96,13 @@ cd src
 ./mfcuk -C -R 0:A -v 2
 ```
 
+##### mfcuk-r65 (Older Version) with libnfc 1.5.1
+
+It is said that sometimes the older version of `mfcuk` and `libnfc` works better compared to the latest version. I've tried this with no luck :\(  
+However, if you're still curious, you can check [this tutorial (ACR122U, mfcuk, and mfoc: Cracking MIFARE Classic on Arch Linux)](https://linuskarlsson.se/blog/acr122u-mfcuk-and-mfoc-cracking-mifare-classic-on-arch-linux/).
+
+This mfcuk-r65 requires libpcsclite: `sudo apt-get install libpcsclite-dev`.
+
 #### mfoc
 
 ```sh
@@ -98,6 +115,13 @@ make
 cd src
 ./mfoc -O source_dump.mfd -k {the key A you retrieved}
 ```
+
+##### mfoc-hardnested
+
+This is the hardnested version of mfoc, is claimed to be more reliable, although I've not found any difference.  
+In case you're interested, you can check [this Github (nfc-tools/mfoc-hardnested)](https://github.com/nfc-tools/mfoc-hardnested).
+
+This mfoc-hardnested requires liblzma: `sudo apt-get install liblzma-dev`.
 
 #### Debugging
 
