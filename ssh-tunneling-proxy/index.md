@@ -24,6 +24,12 @@
         - SOCKS Host: `localhost`
         - Port `9999`
 
+## Useful resources
+
+1. [Baeldung - SSH-Tunneling-Proxying](https://www.baeldung.com/linux/ssh-tunneling-and-proxying)
+2. [StackExchange - How Does Reverse SSH Tunneling Work](https://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-work)
+3. [StackOverflow - Can Someone Explain SSH Tunnel in A Simple Way](https://stackoverflow.com/questions/5280827/can-someone-explain-ssh-tunnel-in-a-simple-way)
+
 ## Author
 
 Ferdiant Joshua Muis
