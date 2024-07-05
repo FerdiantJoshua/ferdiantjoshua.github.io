@@ -47,6 +47,15 @@
     mysql -u <database_user> -p -h localhost -P 20999 <database_name>
     ```
 
+## Setup SSH Server
+
+### Windows
+
+Refer to these resources:
+
+1. [Windows' Official Docs](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell)
+2. [StackOverflow - Setting Up OpenSSH for Windows Using Public Key Authentication](https://stackoverflow.com/questions/16212816/setting-up-openssh-for-windows-using-public-key-authentication)
+
 ## Useful resources
 
 1. [Baeldung - SSH-Tunneling-Proxying](https://www.baeldung.com/linux/ssh-tunneling-and-proxying)
